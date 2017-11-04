@@ -16,27 +16,29 @@ var ListingsSchema = new Schema({
     city: String
 });
 
-var Rentals = mongoose.model('Rentals', RentalSchema, 'Rentals');
-var Listings = mongoose.model('Listings', ListingsSchema, 'Listings');
+var Rental = mongoose.model('Rental', RentalSchema, 'rentals');
+var Listing = mongoose.model('Listing', ListingsSchema, 'listings');
 
-router.get('/view', function(req, res){
-   Rentals.find({}, function(err, Rentals){
+router.get('/', function(req, res){
+   Rental.find({}, function(err, foundRentals){
        if(err){
            console.log('Error! ', err);
            res.sendStatus(500);
        } else {
-           res.send(Rentals);
+           console.log(foundRentals);
+           res.send(foundRentals);
        }
    })
 }); //End Rental GET route.
 
-router.get('/listings', function(req, res){
-    Listings.find({}, function(err, Listings){
+router.get('/', function(req, res){
+    Listing.find({}, function(err, foundListings){
         if(err){
             console.log('Error!', err);
             res.sendStatus(500);
         } else {
-            res.send(Listings);
+            res.send(foundListings);
+            console.log(foundListings);
         }
     })
 }); //End Home Listings

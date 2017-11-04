@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Real Estate</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="/vencords/angular.min.js"></script>
     
+</head>
+<body ng-app="myApp">
+    <h1>Real Estate Listings</h1>
+    {{4===4}}
+
+    <a href="/#!/viewListings">View homes for sale</a>
+    
+    <a href="/#!/viewRentals">View homes for rent</a>
+    
+    <main ng-view></main>
 </body>
 </html>

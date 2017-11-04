@@ -4,7 +4,7 @@ myApp.controller('RentalsController', ['$http', function($http){
 
     vr.getRentals = function(){
         
-        $http.get('/view').then(function(response){
+        $http.get('/estate/view').then(function(response){
             console.log('success');
             vr.rentals = response.data;
             console.log(vr.rentals)

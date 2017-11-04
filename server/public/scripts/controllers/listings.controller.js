@@ -4,7 +4,7 @@ myApp.controller('ListingsController', ['$http', function($http){
 
     vl.getListings = function(){
         
-        $http.get('/listings').then(function(response){
+        $http.get('/estate/listings').then(function(response){
             console.log('success');
             vl.listings = response.data;
             console.log(vl.listings)

@@ -1,5 +1,15 @@
 <div>
-        {{4===4}}
-    {{vl.listings}}
-
+    <h1>Houses for sale</h1>
+    <table class="table table-bordered">
+    <tr>
+       <th>Cost</th>
+       <th>Square Feet</th>
+       <th>City</th>
+    </tr>
+    <tr ng-repeat="li in vl.listings">
+       <td>{{li.rent}}</td>
+       <td>{{li.sqft}}</td>
+       <td>{{li.city}}</td>
+    </tr>
+    </table>
 </div>

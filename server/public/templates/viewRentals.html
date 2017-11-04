@@ -1,7 +1,17 @@
 <div>
-        {{4===4}}
-    {{vr.rentals}}
-
-
+    <h1>Homes for rent</h1>
+    <table class="table table-bordered">
+    <tr>
+       <th>Rent</th>
+       <th>Square Feet</th>
+       <th>City</th>
+    </tr>
+    <tr ng-repeat="vr in vr.rentals">
+       <td>{{vr.rent}}</td>
+       <td>{{vr.sqft}}</td>
+       <td>{{vr.city}}</td>
+    </tr>
+    </table>
+</div>
 
 </div>

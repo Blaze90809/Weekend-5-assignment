@@ -18,11 +18,14 @@
             <th>Rent</th>
             <th>Square Feet</th>
             <th>City</th>
+            <th>Delete</th>
         </tr>
-        <tr ng-repeat="vr in vr.rentals">
-            <td>{{vr.rent}}</td>
-            <td>{{vr.sqft}}</td>
-            <td>{{vr.city}}</td>
+        
+        <tr ng-repeat="re in vr.rentals">
+            <td>{{re.rent}}</td>
+            <td>{{re.sqft}}</td>
+            <td>{{re.city}}</td>
+            <td><button ng-click="vr.deleteRentals(re._id)" class="btn btn-danger">Delete</button></td>
         </tr>
     </table>
 

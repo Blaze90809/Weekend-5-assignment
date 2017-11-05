@@ -17,6 +17,7 @@
             <th>Cost</th>
             <th>Square Feet</th>
             <th>City</th>
+            <th>Delete</th>
         </tr>
 
 
@@ -24,6 +25,7 @@
             <td>{{ho.cost}}</td>
             <td>{{ho.sqft}}</td>
             <td>{{ho.city}}</td>
+            <td><button ng-click="vl.deleteListing(ho._id)" class="btn btn-danger">Delete</button></td>
         </tr>
     </table>
 

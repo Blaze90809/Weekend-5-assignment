@@ -24,5 +24,15 @@ myApp.controller('ListingsController', ['$http', function($http){
         console.log('Failure!');
     });
     }
+
+    vl.deleteListing = function(listingId){
+     $http.delete('/viewlistings/' + listingId).then(function(response){
+         console.log('success');
+         console.log(listingId);
+         vl.getListings();
+     }).catch(function (error) {
+        console.log('Failure!');
+    });
+    }
     
-}])
+}]);

@@ -24,4 +24,15 @@ myApp.controller('RentalsController', ['$http', function($http){
             console.log('Failure!')
         });
     }
+
+    vr.deleteRentals = function(rentalId){
+        $http.delete('/viewrentals/' + rentalId).then(function(response){
+            console.log('success');
+            console.log(rentalId);
+            vr.getRentals();
+        }).catch(function(error){
+            console.log('Failure!')
+        })
+    }
+
 }]);

@@ -4,25 +4,24 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ListingsSchema = new Schema({
-    cost: Number,
+var RentalSchema = new Schema({
+    rent: Number,
     sqft: Number,
     city: String
 });
 
-
-var Listing = mongoose.model('Listing', ListingsSchema, 'listings');
+var Rental = mongoose.model('Rental', RentalSchema, 'rentals');
 
 router.get('/', function(req, res){
-    Listing.find({}, function(err, foundListings){
+    Rental.find({}, function(err, foundRentals){
         if(err){
-            console.log('Error!', err);
+            console.log('Error! ', err);
             res.sendStatus(500);
         } else {
-            res.send(foundListings);
-            console.log(foundListings);
+            console.log('foundRentals');
+            res.send(foundRentals);
         }
     })
-}); //End Home Listings
+ }); //End Rental GET route.
 
 module.exports = router;

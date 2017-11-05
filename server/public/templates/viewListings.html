@@ -14,4 +14,18 @@
        <td>{{ho.city}}</td>
     </tr>
     </table>
+
+    <div>
+            <h1>Add houses for sale</h1>
+            <form ng-submit="vl.postListings(vl.listing)">
+               <label for="rentSale">What is the cost?</label>
+               <input type="text" ng-model="vl.listing.cost" id="cost" placeholder="Cost">
+               <label for="rentSale">What is the square footage?</label>
+               <input type="text" ng-model="vl.listing.sqft" id="sqft" placeholder="Square Footage">
+               <label for="rentSale">Where is the property located?</label>
+               <input type="text" ng-model="vl.listing.city" id="city" placeholder="City">
+               <button class="btn btn-primary">Add Listing</button>
+            </form>
+        </div>
+
 </div>

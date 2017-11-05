@@ -25,4 +25,19 @@ router.get('/', function(req, res){
     })
 }); //End Home Listings
 
+router.post('/', function(req, res){
+    console.log(req.body)
+
+    var listingToAdd = new Listing(req.body);
+
+    listingToAdd.save(function(err, data){
+        if(err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
+        }
+    })
+})
+
 module.exports = router;

@@ -24,4 +24,18 @@ router.get('/', function(req, res){
     })
  }); //End Rental GET route.
 
+router.post('/', function(req, res){
+    console.log(req.body)
+
+    var rentalToAdd = new Rental(req.body);
+
+    rentalToAdd.save(function(err, data){
+        if(err){
+            console.log(err)
+        } else {
+            res.sendStatus(201);
+        }
+    })
+})
+
 module.exports = router;

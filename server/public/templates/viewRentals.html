@@ -12,6 +12,19 @@
        <td>{{vr.city}}</td>
     </tr>
     </table>
+
+    <div>
+            <h1>Add homes for rent</h1>
+            <form ng-submit="vr.postRentals(vr.listing)">
+               <label for="rentSale">What is the rent?</label>
+               <input type="text" ng-model="vr.listing.rent" id="rent" placeholder="Rent">
+               <label for="rentSale">What is the square footage?</label>
+               <input type="text" ng-model="vr.listing.sqft" id="sqft" placeholder="Square Footage">
+               <label for="rentSale">Where is the property located?</label>
+               <input type="text" ng-model="vr.listing.city" id="city" placeholder="City">
+               <button class="btn btn-primary">Add Listing</button>
+            </form>
+        </div>
 </div>
 
 </div>

@@ -14,4 +14,14 @@ myApp.controller('RentalsController', ['$http', function($http){
         })
     }
     vr.getRentals();
-}])
+
+    vr.postRentals = function(listing){
+        console.log(listing)
+        $http.post('/viewrentals', listing).then(function(response){
+            console.log('success posting!')
+            vr.getRentals()
+        }).catch(function(error){
+            console.log('Failure!')
+        });
+    }
+}]);

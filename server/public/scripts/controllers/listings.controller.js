@@ -14,4 +14,15 @@ myApp.controller('ListingsController', ['$http', function($http){
         })
     }
     vl.getListings();
+    
+    vl.postListings = function(listing){
+      console.log(listing)
+    $http.post('/viewlistings', listing).then(function(response){
+      console.log('success posting!');
+      vl.getListings();
+    }).catch(function(error){
+        console.log('Failure!');
+    });
+    }
+    
 }])

@@ -13,14 +13,14 @@ app.use('/viewrentals', rentals);
 
 var mongoose = require('mongoose');
 
-var dbPath = '';
+var mongoURI= '';
 
-if(process.env.blaze1 != undefined) {
+if(process.env.MONGODB_URI != undefined) {
     // use the string value of the environment variable
-   dbPath = process.env.blaze1;
+    mongoURI = process.env.MONGODB_URI;
 } else {
     // use the local database server
-    dbPath = 'mongodb://localhost:27017/realestate';
+    mongoURI = 'mongodb://localhost:27017/realestate';
 }
 
 mongoose.connection.on('connected', function(){

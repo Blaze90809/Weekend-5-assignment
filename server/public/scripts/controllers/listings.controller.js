@@ -1,38 +1,23 @@
-myApp.controller('ListingsController', ['$http', function($http){
+myApp.controller('ListingsController', function (ListingsService) {
     console.log('listingsController created')
     var vl = this;
-    vl.listings = {};
+    vl.listings = ListingsService.listings;
+    console.log(vl.listings);
 
-    vl.getListings = function(){
-        
-        $http.get('/viewlistings').then(function(response){
-            console.log('success');
-            vl.listings = response.data;
-            console.log(vl.listings)
-        }).catch(function(error){
-            console.log('Failure', error)
-        })
-    }
-    vl.getListings();
     
+        ListingsService.getListings();
+       
+   
+
     vl.postListings = function(listing){
-      console.log(listing)
-    $http.post('/viewlistings', listing).then(function(response){
-      console.log('success posting!');
-      vl.getListings();
-    }).catch(function(error){
-        console.log('Failure!');
-    });
+        ListingsService.postListings(listing);
+        
     }
 
     vl.deleteListing = function(listingId){
-     $http.delete('/viewlistings/' + listingId).then(function(response){
-         console.log('success');
-         console.log(listingId);
-         vl.getListings();
-     }).catch(function (error) {
-        console.log('Failure!');
-    });
+        ListingsService.deleteListing(listingId);
+       
+        
     }
-    
-}]);
+
+});

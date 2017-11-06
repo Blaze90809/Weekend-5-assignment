@@ -30,7 +30,7 @@ mongoose.connection.on('connected', function(){
 mongoose.connection.on('error', function(){
     console.log('mongoose connection failed')
 });
-mongoose.connect(dbPath);
+mongoose.connect(mongoURI);
 
 app.listen(port, function(){
     console.log('Listening on port: ', port)

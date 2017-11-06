@@ -11,16 +11,16 @@ app.use(express.static('server/public'));
 app.use('/viewlistings', listings);
 app.use('/viewrentals', rentals);
 
-var dbPath = '';
-
 var mongoose = require('mongoose');
 
-if(process.env.MONGODB_URI != undefined) {
+var dbPath = '';
+
+if(process.env.blaze1 != undefined) {
     // use the string value of the environment variable
    dbPath = process.env.blaze1;
 } else {
     // use the local database server
-    dbPath = 'mongodb://localhost:27017/databasename';
+    dbPath = 'mongodb://localhost:27017/realestate';
 }
 
 mongoose.connection.on('connected', function(){

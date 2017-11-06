@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var listings = require('./public/routes/listings.router.js')
-var rentals = require('./public/routes/rentals.router.js');
+var listings = require('./routes/listings.router.js')
+var rentals = require('./routes/rentals.router.js');
 var port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
@@ -13,7 +13,7 @@ app.use('/viewrentals', rentals);
 
 var mongoose = require('mongoose');
 
-var databaseUrl = 'mongodb://localhost:27017/realestate'
+// var databaseUrl = 'mongodb://localhost:27017/realestate'
 
 var mongoURI= '';
 

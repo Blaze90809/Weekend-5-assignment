@@ -11,10 +11,17 @@ app.use(express.static('server/public'));
 app.use('/viewlistings', listings);
 app.use('/viewrentals', rentals);
 
+var dbPath = '';
 
 var mongoose = require('mongoose');
 
-var databaseUrl = 'mongodb://localhost:27017/realestate';
+if(process.env.MONGODB_URI != undefined) {
+    // use the string value of the environment variable
+   dbPath = process.env.blaze1;
+} else {
+    // use the local database server
+    dbPath = 'mongodb://localhost:27017/databasename';
+}
 
 mongoose.connection.on('connected', function(){
     console.log('mongoose is connected')

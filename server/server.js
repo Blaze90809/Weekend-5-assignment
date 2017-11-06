@@ -13,6 +13,8 @@ app.use('/viewrentals', rentals);
 
 var mongoose = require('mongoose');
 
+var databaseUrl = 'mongodb://localhost:27017/realestate'
+
 var mongoURI= '';
 
 if(process.env.MONGODB_URI != undefined) {
@@ -30,6 +32,7 @@ mongoose.connection.on('connected', function(){
 mongoose.connection.on('error', function(){
     console.log('mongoose connection failed')
 });
+
 mongoose.connect(mongoURI);
 
 app.listen(port, function(){

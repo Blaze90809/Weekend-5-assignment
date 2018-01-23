@@ -26,11 +26,9 @@ if(process.env.MONGODB_URI != undefined) {
 }
 
 mongoose.connection.on('connected', function(){
-    console.log('mongoose is connected')
 });
 
 mongoose.connection.on('error', function(){
-    console.log('mongoose connection failed')
 });
 
 mongoose.connect(mongoURI);

@@ -20,13 +20,11 @@ router.get('/', function(req, res){
             res.sendStatus(500);
         } else {
             res.send(foundListings);
-            console.log(foundListings);
         }
     })
 }); //End Home Listings
 
 router.post('/', function(req, res){
-    console.log(req.body)
 
     var listingToAdd = new Listing(req.body);
 

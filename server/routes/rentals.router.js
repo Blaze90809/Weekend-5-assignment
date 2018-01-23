@@ -18,14 +18,12 @@ router.get('/', function(req, res){
             console.log('Error! ', err);
             res.sendStatus(500);
         } else {
-            console.log('foundRentals');
             res.send(foundRentals);
         }
     })
  }); //End Rental GET route.
 
 router.post('/', function(req, res){
-    console.log(req.body)
 
     var rentalToAdd = new Rental(req.body);
 

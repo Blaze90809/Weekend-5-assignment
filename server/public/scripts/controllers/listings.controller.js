@@ -8,7 +8,10 @@ myApp.controller('ListingsController', function (ListingsService) {
 
     vl.postListings = function (listing) {
         ListingsService.postListings(listing);
-
+        vl.clearSearch();
+    }
+    vl.clearSearch = function() {
+        vl.listing = null;
     }
 
     vl.deleteListing = function (listingId) {

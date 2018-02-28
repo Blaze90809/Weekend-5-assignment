@@ -10,14 +10,15 @@ myApp.controller('RentalsController', function(ListingsService){
 
     vr.deleteRentals = function(rentalId){
         ListingsService.deleteRentals(rentalId);
-        
-       
     }
 
     vr.postRentals = function(listing){
        ListingsService.postRentals(listing);
-      
-       
+       vr.clearSearch();       
+    }
+
+    vr.clearSearch = function() {
+        vr.listing = null;
     }
 
 });

@@ -1,4 +1,4 @@
-# Name of Application
+# Real Estate Application
 This application allows users to create a database of home and rental properties and view the results.
 
 ## Built with

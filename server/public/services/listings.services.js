@@ -1,14 +1,12 @@
 myApp.service('ListingsService', function ($http) {
     console.log('Listings service created')
     var ls = this;
-    ls.listings = [];
+    ls.listings = {data: []};
     ls.rentals = {data: []};
 
     ls.getListings = function () {
-
-       return $http.get('/viewlistings').then(function (response) {
-            ls.listings=response.data;
-            return response;
+       $http.get('/viewlistings').then(function (response) {
+            ls.listings.data=response.data;
         }).catch(function (error) {
             console.log('Failure', error)
         })
@@ -19,6 +17,7 @@ myApp.service('ListingsService', function ($http) {
         console.log(listing)
         $http.post('/viewlistings', listing).then(function (response) {
             ls.getListings();
+            $route.reload();
         }).catch(function (error) {
             console.log('Failure!');
         });
